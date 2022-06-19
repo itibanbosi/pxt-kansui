@@ -15,9 +15,9 @@ enum onoff {
 namespace newio_blocks {
 
     export enum teikou {
-        //% block="bigger"
+        //% block="大きい"
         大きい,
-        //% block="smaller",
+        //% block="小さい",
         小さい
     }
 
