@@ -85,7 +85,7 @@ namespace newio_blocks {
         return pins.analogReadPin(AnalogPin.P1);
     }
 
-    //% color="#a0522d"  weight=36 blockId=kansui_DISP2 block="かんたん　センサーの電圧値を表示" group="3 センサー　シンプル"
+    //% color="#a0522d"  weight=36 blockId=kansui_DISP2 block="センサーの電圧値を表示" group="3 センサー　シンプル"
     export function kansui_DISP2() {
         let kansui_V;
         kansui_V = pins.analogReadPin(AnalogPin.P1);
