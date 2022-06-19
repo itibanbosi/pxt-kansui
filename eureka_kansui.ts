@@ -31,8 +31,8 @@ namespace newio_blocks {
 
 
 
-    //% color="#a0522d"  weight=79 blockId=kansui_DISP block="かんたん　センサーの電圧値を表示" group="1 センサー簡単ブロック"
-    export function kansui_DISP() {
+    //% color="#a0522d"  weight=79 blockId=kansui_DISP1 block="かんたん　センサーの電圧値を表示" group="1 センサー簡単ブロック"
+    export function kansui_DISP1() {
         let kansui_V;
         pins.digitalWritePin(DigitalPin.P0, 1);
         basic.pause(10);
