@@ -36,7 +36,7 @@ namespace newio_blocks {
     let kansui_V;
     pins.digitalWritePin(DigitalPin.P0, 1);
     basic.pause(10);
-        kansui_V = pins.analogReadPin(AnalogPin.P1) / 1023 * 3.3;
+        kansui_V = Math.round(pins.analogReadPin(AnalogPin.P1) / 1023 * 33)/10;
     pins.digitalWritePin(DigitalPin.P0, 0);
         basic.pause(500);
     return kansui_V
@@ -52,7 +52,7 @@ namespace newio_blocks {
         basic.pause(100);
         pins.digitalWritePin(DigitalPin.P0, 1);
         basic.pause(10);
-        kansui_V = pins.analogReadPin(AnalogPin.P1) / 1023 * 3.3;
+        kansui_V = Math.round(pins.analogReadPin(AnalogPin.P1) / 1023 * 33) / 10;
         pins.digitalWritePin(DigitalPin.P0, 0);
         led.enable(true);
         basic.pause(500);
@@ -65,7 +65,7 @@ namespace newio_blocks {
         let kansui_V;
         pins.digitalWritePin(DigitalPin.P0, 1);
         basic.pause(10);
-        kansui_V = pins.analogReadPin(AnalogPin.P1) / 1023 * 3.3;
+        kansui_V = Math.round(pins.analogReadPin(AnalogPin.P1) / 1023 * 33) / 10;
         pins.digitalWritePin(DigitalPin.P0, 0);
         basic.pause(500);
         switch (daisyou) {
@@ -122,13 +122,13 @@ namespace newio_blocks {
 
     //% color="#ffa800" weight=38 blockId=kansui_sokutei block="(simple)センサー電圧値" group="3 センサー　シンプル"
     export function kansui_sokutei(): number {
-        return pins.analogReadPin(AnalogPin.P1 / 1023 * 3.3);
+        return Math.round(pins.analogReadPin(AnalogPin.P1) / 1023 * 33) / 10;
     }
 
     //% color="#ffa800"  weight=36 blockId=kansui_DISP2 block="(simple)センサーの電圧値を表示" group="3 センサー　シンプル"
     export function kansui_DISP2() {
         let kansui_V;
-        kansui_V = pins.analogReadPin(AnalogPin.P1) / 1023 * 3.3;
+        kansui_V = Math.round(pins.analogReadPin(AnalogPin.P1) / 1023 * 33) / 10;
         basic.showNumber(kansui_V);
     }
 
