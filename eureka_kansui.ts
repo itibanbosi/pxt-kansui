@@ -44,7 +44,6 @@ namespace newio_blocks {
         kansui_V = pins.analogReadPin(AnalogPin.P1);
         pins.digitalWritePin(DigitalPin.P0, 0);
         basic.pause(500);
-        return kansui_V
         basic.showNumber(kansui_V);
     }
 
