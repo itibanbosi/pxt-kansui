@@ -60,7 +60,7 @@ namespace newio_blocks {
     }
 
     //% color="#4741f1" weight=30 block="センサー電圧が |%limit| より |%daisyou| " group="1 センサー簡単ブロック"
-    //% limit.min=0 limit.max=1024
+    //% limit.min=0 limit.max=3.3
     export function handan1(limit: number, daisyou: teikou): boolean {
         let kansui_V;
         pins.digitalWritePin(DigitalPin.P0, 1);
