@@ -31,7 +31,7 @@ namespace newio_blocks {
 
 
 
-    //% color="#4741f1" weight=80 blockId=kantan1 block="パルス方式センサー値" group="2 センサー簡単ブロック"
+    //% color="#4741f1" weight=80 blockId=kantan1 block="パルス方式センサー値" group="2 パルス方式センサー簡単ブロック"
     export function kantan1(): number {
     let kansui_V;
     pins.digitalWritePin(DigitalPin.P0, 1);
@@ -45,7 +45,7 @@ namespace newio_blocks {
 
 
 
-    //% color="#4741f1"  weight=78 blockId=kansui_DISP1 block="パルス方式センサーの電圧値を表示" group="2 センサー簡単ブロック"
+    //% color="#4741f1"  weight=78 blockId=kansui_DISP1 block="パルス方式センサーの電圧値を表示" group="2 パルス方式センサー簡単ブロック"
     export function kansui_DISP1() {
         let kansui_V;
         led.enable(false);
@@ -59,7 +59,7 @@ namespace newio_blocks {
         basic.showNumber(kansui_V);
     }
 
-    //% color="#4741f1" weight=30 block="センサー電圧が |%limit| より |%daisyou| " group="2 センサー簡単ブロック"
+    //% color="#4741f1" weight=30 block="センサー電圧が |%limit| より |%daisyou| " group="2 パルス方式センサー簡単ブロック"
     export function handan1(limit: number, daisyou: teikou): boolean {
         let kansui_V;
         pins.digitalWritePin(DigitalPin.P0, 1);
