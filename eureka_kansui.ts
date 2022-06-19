@@ -51,7 +51,7 @@ namespace newio_blocks {
     }
 
     //% color="#4741f1" weight=89 blockId=kansui_onoff block="センサーへの電圧　|%mode|" group="3 センサー　シンプル"
-    export function kansui_onoff(mode: onoff) {
+    export function kansui_onoff(mode:onoff) {
         switch (mode) {
             case onoff.ON:
                 pins.digitalWritePin(DigitalPin.P0, 1);
