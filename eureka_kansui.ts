@@ -124,7 +124,7 @@ namespace newio_blocks {
         return Math.round(pins.analogReadPin(AnalogPin.P1) / 1023 * 33) / 10;
     }
 
-    //% color="#ffa800"  weight=36 blockId=kansui_DISP2 block="(simple)センサーの電圧値を表示" group="4 (Simple)センサー　パルス式非対応ル"
+    //% color="#ffa800"  weight=36 blockId=kansui_DISP2 block="(simple)センサーの電圧値を表示" group="4 (Simple)センサー　パルス式非対応"
     export function kansui_DISP2() {
         let kansui_V;
         kansui_V = Math.round(pins.analogReadPin(AnalogPin.P1) / 1023 * 33) / 10;
