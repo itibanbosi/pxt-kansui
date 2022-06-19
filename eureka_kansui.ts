@@ -106,7 +106,7 @@ namespace newio_blocks {
     }
 
 
-    //% color="#ffa800" weight=40 blockId=kansui_onoff block="(simple)センサーへの電圧 |%mode|" group="4 センサー　シンプル"
+    //% color="#ffa800" weight=40 blockId=kansui_onoff block="(simple)センサーへの電圧 |%mode|" group="4 (Simple)センサー　パルス式非対応"
     export function kansui_onoff(mode: onoff) {
         switch (mode) {
             case onoff.ON:
@@ -119,12 +119,12 @@ namespace newio_blocks {
         }
     }
 
-    //% color="#ffa800" weight=38 blockId=kansui_sokutei block="(simple)センサー電圧値" group="4 センサー　シンプル"
+    //% color="#ffa800" weight=38 blockId=kansui_sokutei block="(simple)センサー電圧値" group="4 (Simple)センサー　パルス式非対応"
     export function kansui_sokutei(): number {
         return Math.round(pins.analogReadPin(AnalogPin.P1) / 1023 * 33) / 10;
     }
 
-    //% color="#ffa800"  weight=36 blockId=kansui_DISP2 block="(simple)センサーの電圧値を表示" group="4 センサー　シンプル"
+    //% color="#ffa800"  weight=36 blockId=kansui_DISP2 block="(simple)センサーの電圧値を表示" group="4 (Simple)センサー　パルス式非対応ル"
     export function kansui_DISP2() {
         let kansui_V;
         kansui_V = Math.round(pins.analogReadPin(AnalogPin.P1) / 1023 * 33) / 10;
