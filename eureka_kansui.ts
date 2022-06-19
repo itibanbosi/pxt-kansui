@@ -6,7 +6,8 @@ enum onoff {
     OFF,
 }
 
-
+pins.setPull(DigitalPin.P0, PinPullMode.PullNone);
+pins.setPull(DigitalPin.P1, PinPullMode.PullNone);
 
 
 
