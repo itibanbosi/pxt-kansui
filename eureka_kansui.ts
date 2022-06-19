@@ -70,7 +70,7 @@ namespace newio_blocks {
         basic.pause(500);
         switch (daisyou) {
             case teikou.大きい:
-                if (kansui_V < limit) {
+                if (kansui_V > limit) {
                     return true;
                 } else {
                     return false;
@@ -78,9 +78,9 @@ namespace newio_blocks {
                 break;
             case teikou.小さい:
                 if (kansui_V < limit) {
-                    return false;
-                } else {
                     return true;
+                } else {
+                    return false;
                 }
                 break;
         }
