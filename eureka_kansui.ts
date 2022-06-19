@@ -14,6 +14,14 @@ enum onoff {
 
 namespace newio_blocks {
 
+    export enum teikou {
+        //% block="bigger"
+        大きい,
+        //% block="smaller",
+        小さい
+    }
+
+
     //% color="#1E90FF" weight=100 block="待ち時間（秒）|%second|" group="0 基本"
     //% second.min=0 second.max=10
     export function driveForwards(second: number): void {
@@ -46,6 +54,27 @@ namespace newio_blocks {
         basic.pause(500);
         basic.showNumber(kansui_V);
     }
+
+    //% color="#4741f1" weight=30 block="センサー電圧が |%limit| より |%daisyou| " group="1 センサー簡単ブロック"
+    //% limit.min=0 limit.max=1024
+    //% advanced=true
+    export function handan1(limit: number, daisyou: teikou): boolean {
+        let kansui_V;
+        pins.digitalWritePin(DigitalPin.P0, 1);
+        basic.pause(10);
+        kansui_V = pins.analogReadPin(AnalogPin.P1);
+        pins.digitalWritePin(DigitalPin.P0, 0);
+        basic.pause(500);
+
+        switch (daisyou) {
+            case teikou.大きい:
+                return true;
+            case teikou.小さい:
+                pins.digitalWritePin(DigitalPin.P2, 0);
+                return false;
+        }
+    }
+
 
     //% color="#696969" weight=56 blockId=pump_relay block="水ポンプ |%mode|" group="2 水ポンプ"
     export function pump_relay(mode: onoff) {
