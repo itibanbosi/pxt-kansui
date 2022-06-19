@@ -64,14 +64,23 @@ namespace newio_blocks {
         kansui_V = pins.analogReadPin(AnalogPin.P1);
         pins.digitalWritePin(DigitalPin.P0, 0);
         basic.pause(500);
-
         switch (daisyou) {
             case teikou.大きい:
-                return true;
+                if (kansui_V < limit) {
+                    return true;
+                } else {
+                    return false;
+                }
+                break;
             case teikou.小さい:
-                pins.digitalWritePin(DigitalPin.P2, 0);
-                return false;
+                if (kansui_V < limit) {
+                    return false;
+                } else {
+                    return true;
+                }
+                break;
         }
+
     }
 
 
