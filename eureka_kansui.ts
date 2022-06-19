@@ -63,7 +63,7 @@ namespace newio_blocks {
             }
         }
     }
-    //% color="#696969" weight=56 blockId=pump_relay_2 block="水ポンプの流量調整 |%syuturyoku|" group="1 かん水機"
+    //% color="#696969" weight=56 blockId=pump_relay_2 block="水ポンプの流量|%syuturyoku|" group="1 かん水機"
     //% syuturyoku.min=0 syuturyoku.max=1023
     export function IO_relay_2(syuturyoku: number) {
         return pins.analogWritePin(AnalogPin.P2, syuturyoku);
