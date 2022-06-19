@@ -47,10 +47,13 @@ namespace newio_blocks {
     //% color="#4741f1"  weight=78 blockId=kansui_DISP1 block="パルス方式センサーの電圧値を表示" group="1 センサー簡単ブロック"
     export function kansui_DISP1() {
         let kansui_V;
+        led.enable(false);
+        basic.pause(100);
         pins.digitalWritePin(DigitalPin.P0, 1);
         basic.pause(10);
         kansui_V = pins.analogReadPin(AnalogPin.P1);
         pins.digitalWritePin(DigitalPin.P0, 0);
+        led.enable(true);
         basic.pause(500);
         basic.showNumber(kansui_V);
     }
