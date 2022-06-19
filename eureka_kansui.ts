@@ -22,7 +22,7 @@ namespace newio_blocks {
 
 
 
-    //% color="#4741f1" weight=80 blockId=kantan1 block="かんたん　センサー値" group="1 センサー簡単ブロック"
+    //% color="#4741f1" weight=80 blockId=kantan1 block="パルス方式センサー値" group="1 センサー簡単ブロック"
     export function kantan1(): number {
     let kansui_V;
     pins.digitalWritePin(DigitalPin.P0, 1);
@@ -36,7 +36,7 @@ namespace newio_blocks {
 
 
 
-    //% color="#a0522d"  weight=78 blockId=kansui_DISP1 block="かんたん　センサーの電圧値を表示" group="1 センサー簡単ブロック"
+    //% color="#a0522d"  weight=78 blockId=kansui_DISP1 block="パルス方式センサーの電圧値を表示" group="1 センサー簡単ブロック"
     export function kansui_DISP1() {
         let kansui_V;
         pins.digitalWritePin(DigitalPin.P0, 1);
@@ -67,7 +67,7 @@ namespace newio_blocks {
     }
 
 
-    //% color="#4741f1" weight=40 blockId=kansui_onoff block="センサーへの電圧　|%mode|" group="3 センサー　シンプル"
+    //% color="#4741f1" weight=40 blockId=kansui_onoff block="(simple)センサーへの電圧 |%mode|" group="3 センサー　シンプル"
     export function kansui_onoff(mode: onoff) {
         switch (mode) {
             case onoff.ON:
@@ -80,12 +80,12 @@ namespace newio_blocks {
         }
     }
 
-    //% color="#ffa800" weight=38 blockId=kansui_sokutei block="センサー電圧値" group="3 センサー　シンプル"
+    //% color="#ffa800" weight=38 blockId=kansui_sokutei block="(simple)センサー電圧値" group="3 センサー　シンプル"
     export function kansui_sokutei(): number {
         return pins.analogReadPin(AnalogPin.P1);
     }
 
-    //% color="#a0522d"  weight=36 blockId=kansui_DISP2 block="センサーの電圧値を表示" group="3 センサー　シンプル"
+    //% color="#a0522d"  weight=36 blockId=kansui_DISP2 block="(simple)センサーの電圧値を表示" group="3 センサー　シンプル"
     export function kansui_DISP2() {
         let kansui_V;
         kansui_V = pins.analogReadPin(AnalogPin.P1);
