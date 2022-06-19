@@ -1,4 +1,4 @@
-/* Ver3.7 Eureka_IO &　iːo*/
+/* Ver1.0 Eureka_Automatic irrigation device*/
 
 
 enum onoff {
