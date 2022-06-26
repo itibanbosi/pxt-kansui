@@ -33,6 +33,7 @@ namespace newio_blocks {
     //% color="#4741f1" weight=80 blockId=tien block="パルス後から測定までの時間 |%pulse|" group="2 パルス方式センサー簡単ブロック"
     export function tien(pulse: number) {
         let pulse_time = pulse;
+        basic.showNumber(pulse_time)
     }
 
     //% color="#4741f1" weight=80 blockId=kantan1 block="パルス方式センサー値" group="2 パルス方式センサー簡単ブロック"
