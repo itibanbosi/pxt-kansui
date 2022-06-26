@@ -39,9 +39,8 @@ namespace newio_blocks {
     //% color="#4741f1" weight=80 blockId=kantan1 block="パルス方式センサー値" group="2 パルス方式センサー簡単ブロック"
     export function kantan1() :number {
     let kansui_V;
-    let tien = pulse_time;
     pins.digitalWritePin(DigitalPin.P0, 1);
-    basic.pause(pulse_time);
+    basic.pause(Math.round(pulse_time));
         kansui_V = Math.round(pins.analogReadPin(AnalogPin.P1) / 1023 * 33)/10;
     pins.digitalWritePin(DigitalPin.P0, 0);
         basic.pause(500);
