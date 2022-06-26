@@ -36,10 +36,11 @@ namespace newio_blocks {
     }
 
     //% color="#4741f1" weight=80 blockId=kantan1 block="パルス方式センサー値" group="2 パルス方式センサー簡単ブロック"
-    export function kantan1(pulse:number): number {
+    export function kantan1() :number {
     let kansui_V;
+    let t = pulse_time;
     pins.digitalWritePin(DigitalPin.P0, 1);
-    basic.pause(pulse);
+    basic.pause(t);
         kansui_V = Math.round(pins.analogReadPin(AnalogPin.P1) / 1023 * 33)/10;
     pins.digitalWritePin(DigitalPin.P0, 0);
         basic.pause(500);
@@ -50,12 +51,13 @@ namespace newio_blocks {
 
 
     //% color="#4741f1"  weight=78 blockId=kansui_DISP1 block="パルス方式センサーの電圧値を表示" group="2 パルス方式センサー簡単ブロック"
-    export function kansui_DISP1(pulse: number) {
+    export function kansui_DISP1() {
         let kansui_V;
+        let t = pulse_time;
         led.enable(false);
         basic.pause(100);
         pins.digitalWritePin(DigitalPin.P0, 1);
-        basic.pause(pulse);
+        basic.pause(t);
         kansui_V = Math.round(pins.analogReadPin(AnalogPin.P1) / 1023 * 33) / 10;
         pins.digitalWritePin(DigitalPin.P0, 0);
         led.enable(true);
@@ -64,10 +66,11 @@ namespace newio_blocks {
     }
 
     //% color="#4741f1" weight=30 block="センサー電圧が |%limit| より |%daisyou|" group="2 パルス方式センサー簡単ブロック"
-    export function handan1(limit: number, daisyou: teikou, pulse: number): boolean {
+    export function handan1(limit: number, daisyou: teikou): boolean {
         let kansui_V;
+        let t = pulse_time;
         pins.digitalWritePin(DigitalPin.P0, 1);
-        basic.pause(pulse);
+        basic.pause(t);
         kansui_V = Math.round(pins.analogReadPin(AnalogPin.P1) / 1023 * 33) / 10;
         pins.digitalWritePin(DigitalPin.P0, 0);
         basic.pause(500);
