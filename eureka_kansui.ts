@@ -12,10 +12,10 @@ pins.setPull(DigitalPin.P1, PinPullMode.PullNone);
 
 
 //% color="#ff4500" weight=94 block="かん水機"
-let pulse_time = 10;
+
 
 namespace newio_blocks {
-
+    let pulse_time = 10;
     export enum teikou {
         //% block="大きい"
         大きい,
