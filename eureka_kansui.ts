@@ -9,13 +9,13 @@ enum onoff {
 pins.setPull(DigitalPin.P0, PinPullMode.PullNone);
 pins.setPull(DigitalPin.P1, PinPullMode.PullNone);
 
-
+let pulse_time = 10;
 
 //% color="#ff4500" weight=94 block="かん水機"
 
 
 namespace newio_blocks {
-    let pulse_time = 10;
+    pulse_time = 10;
     export enum teikou {
         //% block="大きい"
         大きい,
@@ -45,6 +45,7 @@ namespace newio_blocks {
         kansui_V = Math.round(pins.analogReadPin(AnalogPin.P1) / 1023 * 33)/10;
     pins.digitalWritePin(DigitalPin.P0, 0);
         basic.pause(500);
+        basic.showNumber(t);
     return kansui_V
     }
 
