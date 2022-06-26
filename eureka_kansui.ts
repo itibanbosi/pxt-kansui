@@ -30,7 +30,7 @@ namespace newio_blocks {
         basic.pause(second * 1000);
     }
 
-    //% color="#ff3d03" weight=90 blockId=tien block="パルス後から測定までの時間 |%pulse| m秒" group="2 パルス方式センサー簡単ブロック"
+    //% color="#ff3d03" weight=90 blockId=tien block="パルス後から測定までの時間 |%pulse| m秒" group="1 基本"
     export function tien(pulse: number) {
         pulsetime = pulse;
         basic.showNumber(pulsetime)
