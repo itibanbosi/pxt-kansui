@@ -6,6 +6,13 @@ enum onoff {
     OFF,
 }
 
+enum pulse {
+    早く = 10,
+    ゆっくり = 20,
+    ふつう = 50,
+    はやく = 100,
+}
+
 pins.setPull(DigitalPin.P0, PinPullMode.PullNone);
 pins.setPull(DigitalPin.P1, PinPullMode.PullNone);
 
@@ -31,11 +38,11 @@ namespace newio_blocks {
 
 
 
-    //% color="#4741f1" weight=80 blockId=kantan1 block="パルス方式センサー値" group="2 パルス方式センサー簡単ブロック"
-    export function kantan1(): number {
+    //% color="#4741f1" weight=80 blockId=kantan1 block="パルス方式センサー値 遅延時間|%pulse|" group="2 パルス方式センサー簡単ブロック"
+    export function kantan1(pulse:number): number {
     let kansui_V;
     pins.digitalWritePin(DigitalPin.P0, 1);
-    basic.pause(10);
+    basic.pause(pulse);
         kansui_V = Math.round(pins.analogReadPin(AnalogPin.P1) / 1023 * 33)/10;
     pins.digitalWritePin(DigitalPin.P0, 0);
         basic.pause(500);
@@ -45,13 +52,13 @@ namespace newio_blocks {
 
 
 
-    //% color="#4741f1"  weight=78 blockId=kansui_DISP1 block="パルス方式センサーの電圧値を表示" group="2 パルス方式センサー簡単ブロック"
-    export function kansui_DISP1() {
+    //% color="#4741f1"  weight=78 blockId=kansui_DISP1 block="パルス方式センサーの電圧値を表示 遅延時間|%pulse|" group="2 パルス方式センサー簡単ブロック"
+    export function kansui_DISP1(pulse: number) {
         let kansui_V;
         led.enable(false);
         basic.pause(100);
         pins.digitalWritePin(DigitalPin.P0, 1);
-        basic.pause(10);
+        basic.pause(pulse);
         kansui_V = Math.round(pins.analogReadPin(AnalogPin.P1) / 1023 * 33) / 10;
         pins.digitalWritePin(DigitalPin.P0, 0);
         led.enable(true);
@@ -59,11 +66,11 @@ namespace newio_blocks {
         basic.showNumber(kansui_V);
     }
 
-    //% color="#4741f1" weight=30 block="センサー電圧が |%limit| より |%daisyou| " group="2 パルス方式センサー簡単ブロック"
-    export function handan1(limit: number, daisyou: teikou): boolean {
+    //% color="#4741f1" weight=30 block="センサー電圧が |%limit| より |%daisyou| |%pulse|" group="2 パルス方式センサー簡単ブロック"
+    export function handan1(limit: number, daisyou: teikou, pulse: number): boolean {
         let kansui_V;
         pins.digitalWritePin(DigitalPin.P0, 1);
-        basic.pause(10);
+        basic.pause(pulse);
         kansui_V = Math.round(pins.analogReadPin(AnalogPin.P1) / 1023 * 33) / 10;
         pins.digitalWritePin(DigitalPin.P0, 0);
         basic.pause(500);
