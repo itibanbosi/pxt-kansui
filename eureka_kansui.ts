@@ -64,8 +64,8 @@ namespace newio_blocks {
         basic.showNumber(kansui_V);
     }
 
-    //% color="#4741f1"  weight=75 blockId=kansui_DISP2 block="パルス方式センサーのグラフ表示" group="2 パルス方式センサー簡単ブロック"
-    export function kansui_DISP2() {
+    //% color="#4741f1"  weight=75 blockId=kansui_DISP3 block="パルス方式センサーのグラフ表示" group="2 パルス方式センサー簡単ブロック"
+    export function kansui_DISP3() {
         led.plotBarGraph(kantan1(),3.2)
     }
 
