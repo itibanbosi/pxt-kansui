@@ -41,7 +41,7 @@ namespace newio_blocks {
     let kansui_V;
     let t = pulse_time;
     pins.digitalWritePin(DigitalPin.P0, 1);
-    basic.pause(t);
+    basic.pause(1000);
         kansui_V = Math.round(pins.analogReadPin(AnalogPin.P1) / 1023 * 33)/10;
     pins.digitalWritePin(DigitalPin.P0, 0);
         basic.pause(500);
