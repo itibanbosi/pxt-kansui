@@ -9,7 +9,7 @@ enum onoff {
 pins.setPull(DigitalPin.P0, PinPullMode.PullNone);
 pins.setPull(DigitalPin.P1, PinPullMode.PullNone);
 
-let pulse_time = 10;
+let pulsetime = 10;
 
 //% color="#ff4500" weight=94 block="かん水機"
 
@@ -32,15 +32,15 @@ namespace newio_blocks {
 
     //% color="#4741f1" weight=80 blockId=tien block="パルス後から測定までの時間 |%pulse| m秒" group="2 パルス方式センサー簡単ブロック"
     export function tien(pulse: number) {
-        let pulse_time = pulse;
-        basic.showNumber(pulse_time)
+        pulsetime = pulse;
+        basic.showNumber(pulsetime)
     }
 
     //% color="#4741f1" weight=80 blockId=kantan1 block="パルス方式センサー値" group="2 パルス方式センサー簡単ブロック"
     export function kantan1() :number {
     let kansui_V;
     pins.digitalWritePin(DigitalPin.P0, 1);
-    basic.pause(Math.round(pulse_time));
+    basic.pause(pulsetime);
         kansui_V = Math.round(pins.analogReadPin(AnalogPin.P1) / 1023 * 33)/10;
     pins.digitalWritePin(DigitalPin.P0, 0);
         basic.pause(500);
@@ -54,11 +54,10 @@ namespace newio_blocks {
     //% color="#4741f1"  weight=78 blockId=kansui_DISP1 block="パルス方式センサーの電圧値を表示" group="2 パルス方式センサー簡単ブロック"
     export function kansui_DISP1() {
         let kansui_V;
-        let tien = pulse_time;
         led.enable(false);
         basic.pause(100);
         pins.digitalWritePin(DigitalPin.P0, 1);
-        basic.pause(pulse_time);
+        basic.pause(pulsetime);
         kansui_V = Math.round(pins.analogReadPin(AnalogPin.P1) / 1023 * 33) / 10;
         pins.digitalWritePin(DigitalPin.P0, 0);
         led.enable(true);
@@ -69,9 +68,8 @@ namespace newio_blocks {
     //% color="#4741f1" weight=30 block="センサー電圧が |%limit| より |%daisyou|" group="2 パルス方式センサー簡単ブロック"
     export function handan1(limit: number, daisyou: teikou): boolean {
         let kansui_V;
-        let tien = pulse_time;
         pins.digitalWritePin(DigitalPin.P0, 1);
-        basic.pause(pulse_time);
+        basic.pause(pulsetime);
         kansui_V = Math.round(pins.analogReadPin(AnalogPin.P1) / 1023 * 33) / 10;
         pins.digitalWritePin(DigitalPin.P0, 0);
         basic.pause(500);
