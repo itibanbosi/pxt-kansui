@@ -30,12 +30,12 @@ namespace newio_blocks {
         basic.pause(second * 1000);
     }
 
-    //% color="#ff3d03" weight=90 blockId=tien block="パルス後から測定までの時間 |%pulse| m秒" group="1 基本"
+    //% color="#ff3d03" weight=90 blockId=tien block="パルス後から測定までの時間 |%pulse| ミリ秒" group="1 基本"
     export function tien(pulse: number) {
         pulsetime = pulse;
     }
 
-    //% color="#4741f1" weight=80 blockId=kantan1 block="パルス方式センサー値" group="2 パルス方式センサー簡単ブロック"
+    //% color="#4741f1" weight=80 blockId=kantan1 block="パルス方式センサ値" group="2 パルス方式センサ簡単ブロック"
     export function kantan1() :number {
     let kansui_V;
     pins.digitalWritePin(DigitalPin.P0, 1);
@@ -50,7 +50,7 @@ namespace newio_blocks {
 
 
 
-    //% color="#4741f1"  weight=78 blockId=kansui_DISP1 block="パルス方式センサーの電圧値を表示" group="2 パルス方式センサー簡単ブロック"
+    //% color="#4741f1"  weight=78 blockId=kansui_DISP1 block="パルス方式センサの電圧値を表示" group="2 パルス方式センサ簡単ブロック"
     export function kansui_DISP1() {
         let kansui_V;
         led.enable(false);
@@ -64,7 +64,7 @@ namespace newio_blocks {
         basic.showNumber(kansui_V);
     }
 
-    //% color="#4741f1"  weight=75 blockId=kansui_DISP3 block="パルス方式センサーのグラフ表示" group="2 パルス方式センサー簡単ブロック"
+    //% color="#4741f1"  weight=75 blockId=kansui_DISP3 block="パルス方式センサのグラフ表示" group="2 パルス方式センサ簡単ブロック"
     export function kansui_DISP3() {
         led.plotBarGraph(kantan1(),3.2)
     }
@@ -74,7 +74,7 @@ namespace newio_blocks {
 
 
 
-    //% color="#4741f1" weight=30 block="センサー電圧が |%limit| より |%daisyou|" group="2 パルス方式センサー簡単ブロック"
+    //% color="#4741f1" weight=30 block="センサ電圧が |%limit| より |%daisyou|" group="2 パルス方式センサ簡単ブロック"
     export function handan1(limit: number, daisyou: teikou): boolean {
         let kansui_V;
         pins.digitalWritePin(DigitalPin.P0, 1);
