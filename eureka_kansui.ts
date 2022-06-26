@@ -40,7 +40,7 @@ namespace newio_blocks {
     let kansui_V;
     pins.digitalWritePin(DigitalPin.P0, 1);
     basic.pause(pulsetime);
-        kansui_V = Math.round(pins.analogReadPin(AnalogPin.P1) / 1023 * 33)/10;
+        kansui_V = Math.round(pins.analogReadPin(AnalogPin.P1) / 1023 * 330)/100;
     pins.digitalWritePin(DigitalPin.P0, 0);
         basic.pause(500);
     /*    basic.showNumber(tien); */
@@ -57,7 +57,7 @@ namespace newio_blocks {
         basic.pause(100);
         pins.digitalWritePin(DigitalPin.P0, 1);
         basic.pause(pulsetime);
-        kansui_V = Math.round(pins.analogReadPin(AnalogPin.P1) / 1023 * 33) / 10;
+        kansui_V = Math.round(pins.analogReadPin(AnalogPin.P1) / 1023 * 330) / 100;
         pins.digitalWritePin(DigitalPin.P0, 0);
         led.enable(true);
         basic.pause(500);
@@ -79,7 +79,7 @@ namespace newio_blocks {
         let kansui_V;
         pins.digitalWritePin(DigitalPin.P0, 1);
         basic.pause(pulsetime);
-        kansui_V = Math.round(pins.analogReadPin(AnalogPin.P1) / 1023 * 33) / 10;
+        kansui_V = Math.round(pins.analogReadPin(AnalogPin.P1) / 1023 * 330) / 100;
         pins.digitalWritePin(DigitalPin.P0, 0);
         basic.pause(500);
         switch (daisyou) {
