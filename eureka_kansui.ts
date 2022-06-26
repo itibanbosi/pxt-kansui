@@ -41,7 +41,7 @@ namespace newio_blocks {
     let kansui_V;
     let tien = pulse_time;
     pins.digitalWritePin(DigitalPin.P0, 1);
-    basic.pause(tien);
+    basic.pause(pulse_time);
         kansui_V = Math.round(pins.analogReadPin(AnalogPin.P1) / 1023 * 33)/10;
     pins.digitalWritePin(DigitalPin.P0, 0);
         basic.pause(500);
@@ -59,7 +59,7 @@ namespace newio_blocks {
         led.enable(false);
         basic.pause(100);
         pins.digitalWritePin(DigitalPin.P0, 1);
-        basic.pause(tien);
+        basic.pause(pulse_time);
         kansui_V = Math.round(pins.analogReadPin(AnalogPin.P1) / 1023 * 33) / 10;
         pins.digitalWritePin(DigitalPin.P0, 0);
         led.enable(true);
@@ -72,7 +72,7 @@ namespace newio_blocks {
         let kansui_V;
         let tien = pulse_time;
         pins.digitalWritePin(DigitalPin.P0, 1);
-        basic.pause(tien);
+        basic.pause(pulse_time);
         kansui_V = Math.round(pins.analogReadPin(AnalogPin.P1) / 1023 * 33) / 10;
         pins.digitalWritePin(DigitalPin.P0, 0);
         basic.pause(500);
