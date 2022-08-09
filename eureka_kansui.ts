@@ -37,11 +37,11 @@ namespace newio_blocks {
 
     //% color="#4741f1" weight=80 blockId=kantan1 block="パルス方式センサ値" group="2 パルス方式センサ簡単ブロック"
     export function kantan1() :number {
-    let kansui_V;
-    pins.digitalWritePin(DigitalPin.P0, 1);
-    basic.pause(pulsetime);
+        let kansui_V;
+        pins.digitalWritePin(DigitalPin.P0, 1);
+        basic.pause(pulsetime);
         kansui_V = Math.round(pins.analogReadPin(AnalogPin.P1) / 1023 * 330)/100;
-    pins.digitalWritePin(DigitalPin.P0, 0);
+        pins.digitalWritePin(DigitalPin.P0, 0);
         basic.pause(500);
     /*    basic.showNumber(tien); */
     return kansui_V
@@ -53,13 +53,13 @@ namespace newio_blocks {
     //% color="#4741f1"  weight=78 blockId=kansui_DISP1 block="パルス方式センサの電圧値を表示" group="2 パルス方式センサ簡単ブロック"
     export function kansui_DISP1() {
         let kansui_V;
-        led.enable(false);
-        basic.pause(100);
+/*      led.enable(false); 
+        basic.pause(500);   */
         pins.digitalWritePin(DigitalPin.P0, 1);
         basic.pause(pulsetime);
         kansui_V = Math.round(pins.analogReadPin(AnalogPin.P1) / 1023 * 330) / 100;
         pins.digitalWritePin(DigitalPin.P0, 0);
-        led.enable(true);
+/*        led.enable(true);  */
         basic.pause(500);
         basic.showNumber(kansui_V);
     }
@@ -68,11 +68,6 @@ namespace newio_blocks {
     export function kansui_DISP3() {
         led.plotBarGraph(kantan1(),3.2)
     }
-
-
-
-
-
 
     //% color="#4741f1" weight=30 block="センサ電圧が |%limit| より |%daisyou|" group="2 パルス方式センサ簡単ブロック"
     export function handan1(limit: number, daisyou: teikou): boolean {
@@ -120,7 +115,7 @@ namespace newio_blocks {
         return pins.analogWritePin(AnalogPin.P2, syuturyoku);
     }
 
-
+/*
     //% color="#ffa800" weight=40 blockId=kansui_onoff block="(simple)センサーへの電圧 |%mode|" group="4 (Simple)センサー　パルス式非対応"
     export function kansui_onoff(mode: onoff) {
         switch (mode) {
@@ -145,6 +140,7 @@ namespace newio_blocks {
         kansui_V = Math.round(pins.analogReadPin(AnalogPin.P1) / 1023 * 33) / 10;
         basic.showNumber(kansui_V);
     }
+*/
 }
 
 
