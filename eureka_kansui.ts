@@ -9,7 +9,7 @@ enum onoff {
 pins.setPull(DigitalPin.P0, PinPullMode.PullNone);
 pins.setPull(DigitalPin.P1, PinPullMode.PullNone);
 
-let pulsetime = 100;
+let pulsetime = 10;
 
 //% color="#ff4500" weight=94 block="かん水機"
 
